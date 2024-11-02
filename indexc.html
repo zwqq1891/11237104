@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>個人網頁排版</title>
+    <link rel="stylesheet" href="css/webstyle.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #F2EFE6;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 使 body 充滿整個螢幕高度 */
+        }
+        header {
+            background-color: #D7C2AD;
+            color: white;
+            text-align: left;
+            padding: 100px;
+        }
+        header h1 {
+            margin-bottom: 50px;
+        }
+        .style {
+            font-style: italic;
+            font-size: 20px;
+            text-decoration: underline;
+            text-decoration-style: double;
+        }
+        .contact-info {
+            display: flex;            
+            flex-wrap: wrap;         
+        }
+        .side-by-side {
+            margin: 40px 30px 0;
+            font-size: 12px;
+        }
+        header img {
+            width: 250px;
+            height: auto;
+            float: right;
+        }
+        nav {
+            background-color: #D0B290;
+            text-align: center;
+        }
+        nav a {
+            padding: 14px 16px;
+            display: inline-block; 
+            color: rgb(139, 19, 49);     
+        }
+        nav a:hover {
+            background-color: #b99782;
+            color: white;
+        }
+        main {
+            flex: 1; /* 使主內容區域撐滿剩餘空間 */
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* 將內容居中 */
+            padding: 20px;
+        }
+        .about-me {
+            text-align: center;
+            width: 100%;
+            margin-bottom: 20px; /* 增加與下方區域的間距 */
+        }
+        .section-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 使用網格排版 */
+            gap: 20px; /* 區塊間距 */
+            width: 100%;
+        }
+        .section-block {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .progress-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 10px;
+            margin: 5px 0;
+            position: relative; /* 為進度條添加相對定位 */
+            overflow: hidden; /* 隱藏超出部分 */
+        }
+        .progress-bar {
+            height: 20px;
+            border-radius: 10px;
+            color: white;
+            text-align: right; /* 文字靠右 */
+            padding-right: 5px; /* 右邊內邊距 */
+            position: relative; /* 使數字能在進度條上顯示 */
+            width: 0; /* 初始寬度為0 */
+            transition: width 1s ease; /* 添加過渡效果 */
+        }
+        footer {
+            background-color: #957866;
+            text-align: center;
+            color: #444444;
+            padding: 10px;
+        }   
+    </style>
+</head>
+<body>
+    <header>
+        <img src="img/me.png" style="border-radius: 80%" />
+        <h1>RICKY CHIEN</h1>
+        <p class="style">Personal resume</p>
+        <div class="contact-info">
+            <p class="side-by-side">zwqq1891@gmail.com</p>
+            <p class="side-by-side">0983601209</p>
+            <p class="side-by-side">No. 36, Xing'an 1st Street, Zhongli District, Taoyuan City</p>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">About Me</a>
+        <a href="#">Skills, Interests</a>
+        <a href="#">Experience, Education</a>
+    </nav>
+
+    <main>
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p>我是一個對於未來及不確定的事情都會做好規劃的人，我希望所有事情都能夠提前做好準備，預防不必要的錯誤...</p>
+        </div>
+        <div class="section-container">
+            <div class="section-block">
+                <h3>Interests</h3>
+                <p></p>
+            </div>
+            <div class="section-block">
+                <h3>Education</h3>
+                <p>Lorem ipsum dolor sit amet...</p>
+            </div>
+            <div class="section-block">
+                <h3>Skills</h3>
+                <ul>
+                    <li>Java
+                        <div class="progress-container">
+                            <div class="progress-bar" data-skill="80%" style="background-color: #4caf50;"></div>
+                        </div>
+                    </li>
+                    <li>Python
+                        <div class="progress-container">
+                            <div class="progress-bar" data-skill="70%" style="background-color: #4caf50;"></div>
+                        </div>
+                    </li>
+                    <li>HTML
+                        <div class="progress-container">
+                            <div class="progress-bar" data-skill="90%" style="background-color: #4caf50;"></div>
+                        </div>
+                    </li>
+                    <li>CSS
+                        <div class="progress-container">
+                            <div class="progress-bar" data-skill="85%" style="background-color: #4caf50;"></div>
+                        </div>
+                    </li>
+                    <li>PLC
+                        <div class="progress-container">
+                            <div class="progress-bar" data-skill="60%" style="background-color: #4caf50;"></div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="section-block">
+                <h3>Experience</h3>
+                <p>adwadwadwadwadwadawd</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h5>Copyright @ 2022 All rights reserved</h5>
+    </footer>
+
+    <script>
+        // 在頁面加載時觸發進度條動畫
+        window.onload = function() {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            progressBars.forEach(bar => {
+                const skillLevel = bar.getAttribute('data-skill');
+                bar.style.width = skillLevel; // 設定進度條的寬度
+                bar.textContent = skillLevel; // 顯示百分比
+            });
+        };
+    </script>
+</body>
+</html>
