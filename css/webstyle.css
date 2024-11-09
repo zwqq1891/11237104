@@ -1,0 +1,127 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: #F2EFE6;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+header {
+    background-color: #D7C2AD;
+    color: white;
+    text-align: left;
+    padding: 50px;
+}
+header h1 {
+    margin-bottom: 50px;
+}
+.style {
+    font-style: italic;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-style: double;
+}
+.contact-info {
+    display: flex;            
+    flex-wrap: wrap;  
+    margin-top: 70px;       
+    font-size: 40px;
+}
+.side-by-side {
+    margin: 40px 30px 0;
+    font-size: 12px;
+}
+header img {
+    width: 250px;
+    height: auto;
+    float: right;
+}
+nav {
+    background-color: #D0B290;
+    text-align: center;
+}
+nav a {
+    padding: 14px 16px;
+    display: inline-block; 
+    color: rgb(139, 19, 49);     
+}
+nav a:hover {
+    background-color: #b99782;
+    color: white;
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+.about-me {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.about-me h3 {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 20px 0;
+}
+p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+}
+.section-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px; 
+    width: 100%;
+}
+.section-block {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+.skill-col {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; 
+    gap: 10px;
+    margin-bottom: 10px; 
+}
+
+.skill-line {
+    display: flex;
+    background-color: white;
+    height: 10px;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden; 
+}
+
+.skill-line::after {
+    content: "";
+    display: flex;
+    background-color: #4caf50;
+    height: 10px;
+    border-radius: 10px;
+    animation: line-percentage 3s ease forwards;
+}
+@keyframes line-percentage {
+    0% {
+        width: 0%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+footer {
+    background-color: #957866;
+    text-align: center;
+    color: #444444;
+    padding: 10px;
+}   
